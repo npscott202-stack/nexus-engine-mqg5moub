@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('path');
 
-const APP_URL = process.env.APP_URL || 'https://your-app.base44.app';
+const APP_URL = process.env.APP_URL || 'https://nexus-core-link-hospitable.us/';
 
 let mainWindow;
 
@@ -28,7 +28,7 @@ function createWindow() {
   });
 
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
-    if (url.startsWith('http') && !url.includes('base44.app')) {
+    if (url.startsWith('http') && !url.includes('nexus-core-link-hospitable.us')) {
       shell.openExternal(url);
       return { action: 'deny' };
     }
@@ -56,14 +56,8 @@ function createWindow() {
     {
       label: 'Help',
       submenu: [
-        {
-          label: 'Documentation',
-          click: () => shell.openExternal('https://docs.nexusmods.com/')
-        },
-        {
-          label: 'Report Issue',
-          click: () => shell.openExternal('https://github.com/nexusmods/issues')
-        }
+        { label: 'Documentation', click: () => shell.openExternal('https://nexus-core-link-hospitable.us/') },
+        { label: 'Report Issue', click: () => shell.openExternal('https://github.com/nexusmods/issues') }
       ]
     }
   ]);
@@ -74,13 +68,9 @@ function createWindow() {
 app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+  if (process.platform !== 'darwin') app.quit();
 });
 
 app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
-  }
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
