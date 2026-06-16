@@ -39,7 +39,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: launcher
-        run: npm ci
+        run: npm install
 
       - name: Build for ${{ matrix.target }}
         working-directory: launcher
@@ -73,4 +73,4 @@ jobs:
           files: artifacts/**/*
           generate_release_notes: true
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
