@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('path');
 
-const APP_URL = process.env.APP_URL || 'https://nexus-core-link-hospitable.us/';
+const APP_URL = process.env.APP_URL || 'https://nexus-core-link-hospitable.us/app';
 
 let mainWindow;
 
